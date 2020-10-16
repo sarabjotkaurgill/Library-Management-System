@@ -1,0 +1,57 @@
+﻿<Window x:Class="LibraryApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryApp"
+        mc:Ignorable="d"
+        Title="Library Manager" Height="700" Width="1200"
+        Background="AliceBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions >
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Library Management System" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6"  VerticalAlignment="Top" FontStyle="Italic" HorizontalAlignment="Center" Width="500" FontSize="30"/>
+
+        <DataGrid Name="mediaGrid" FontStyle="Oblique" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="5" AutoGenerateColumns="False" BorderThickness="6" FontSize="22">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title,Mode=OneWay}"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding MediaType,Mode=OneWay}"/>
+                <DataGridCheckBoxColumn Header="Availability" Binding="{ Binding IndicateStatus,Mode=OneWay}"/>
+                <DataGridTextColumn Header="Borrower" Binding="{Binding MemberBorrowMedia,Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="memberGrid" Grid.Row="4" FontStyle="Oblique" Grid.Column="2" Grid.RowSpan="3" AutoGenerateColumns="False" BorderThickness="6"  FontSize="20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Member" Binding="{Binding Name,Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="lentButton" Content="Lent" Background="Bisque"  Grid.Column="2"  Grid.Row="2" Click="LentButton_Click" FontSize="14"/>
+        <Button Name="returnButton" Content="Return" Background="Bisque" Grid.Column="2" Grid.Row="3" Click="ReturnButton_Click" FontSize="14"/>
+        <Button Name="modifyMemberButton" Content="Modify Member" Background="Bisque"  Grid.Column="2"  Grid.Row="7" Click="ModifyMemberButton_Click" FontSize="14"/>
+        <Button Name="modifyMediaButton" Content="Modify Media" Background="Bisque" Grid.Column="3" Grid.Row="7" Click="ModifyMediaButton_Click" FontSize="14"/>
+        <Button Name="mediaInfoButton" Content="Media Info" Background="Bisque" Grid.Column="4" Grid.Row="7" Click="MediaInfoButton_Click" FontSize="14"/>
+        <Button Name="memberInfoButton" Content="Member Info" Background="Bisque" Grid.Column="5" Grid.Row="7" Click="MemberInfoButton_Click" FontSize="14"/>
+
+    </Grid>
+</Window>
