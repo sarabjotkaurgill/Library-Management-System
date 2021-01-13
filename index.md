@@ -3,7 +3,7 @@
 Project follows the system of library where it has information regarding which user borrow and issue which book.
 
 
-# Project has:
+## Project has:
 
 1) An abstract Media class that contains the following properties: a string title, a string media type, a unique int serial number, an int for number of times lent, a boolean that indicates whether it is currently borrowed or available, and a string that represents the name of the library member currently borrowing the piece of media
 
